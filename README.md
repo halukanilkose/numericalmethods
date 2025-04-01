@@ -10,4 +10,7 @@ method to determine the fuel element temperature distribution after 1.5s. The fu
 3. Constant thermophysical properties. <br />
 
 **Mathematical Background** <br /> 
-To solve the given problem, it is necessary to determine the temperature distribution in the steady state, where the heat generation is 10<sup>7</sup> W/m<sup>3</sup>. Therefore, if the energy balance is written for a one-dimensional heat transfer problem in the steady state, equation given below can be obtained.
+To solve the given problem, it is necessary to determine the temperature distribution in the steady state, where the heat generation is 10<sup>7</sup> W/m<sup>3</sup>. Therefore, if the energy balance is written for a one-dimensional heat transfer problem in the steady state, equation given below can be obtained.<br />
+$${{{\partial ^2}T} \over {\partial {x^2}}} + {q \over k} = 0$$ <br />
+T, x, q and k represents the temperature, position, heat generation and thermal conductivity, respectively. The temperature as a function of position has been solved using the method of separable ordinary differential equations, and the equation given below has been obtained.<br />
+$$T\left( x \right) =  - {q \over {2k}}{x^2} + {C_1}x + {C_2}$$<br />
