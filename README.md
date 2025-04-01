@@ -31,4 +31,6 @@ $$T\left( x \right) = {{q{L^2}} \over {2k}}\left( {1 - {{{x^2}} \over {{L^2}}}} 
 
 A numerical time-dependent solution will be obtained using the FTCS (Forward Time Central Space) finite difference method, with a position increment of Δx=0.002m. Except for the regions where boundary conditions apply, the discretized form of the equation in heat equation shall be used.<br />
 
+$$k{{{\partial ^2}T} \over {\partial {x^2}}} + q = \rho {c_p}{{\partial T} \over {\partial t}}$$ <br />
+
 
