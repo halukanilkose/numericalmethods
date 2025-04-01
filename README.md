@@ -59,6 +59,12 @@ When the necessary adjustments are made, the following equation is obtained for 
 
 $$T_5^{j + 1} = 2Fo\left[ {T_4^p + Bi{T_\infty } + {{q\Delta {x^2}} \over {2k}}} \right] + \left( {1 - 2Fo - 2BiFo} \right)T_5^j$$<br />
 
+
+| Name     | Character |
+| ---      | ---       |
+| Backtick | `         |
+| Pipe     | \|        |
+
 Time[s]/Location[m]}        | 0.000  | 0.002  | 0.004  | 0.006  | 0.008  | 0.010  
 0                           | 357.58 | 356.91 | 354.91 | 351.58 | 346.91 | 340.91 
 0.3                         | 358.08 | 357.41 | 355.41 | 352.08 | 347.41 | 341.41 
