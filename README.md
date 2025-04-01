@@ -8,3 +8,6 @@ method to determine the fuel element temperature distribution after 1.5s. The fu
 1. One dimensional heat conduction in x direction. <br />
 2. Uniform heat generation. <br />
 3. Constant thermophysical properties. <br />
+
+**Mathematical Background** <br /> 
+To solve the given problem, it is necessary to determine the temperature distribution in the steady state, where the heat generation is 10<sup>7</sup> W/m<sup>3</sup>. Therefore, if the energy balance is written for a one-dimensional heat transfer problem in the steady state, equation 1 is obtained.
