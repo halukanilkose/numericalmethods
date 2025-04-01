@@ -53,6 +53,8 @@ $$T_0^{j + 1} = Fo\left[ {2T_1^p + {{q\Delta {x^2}} \over k}} \right] + \left( {
 
 Apart from this, at the outermost node, the following equality is used. The outermost point of the 0.01 meter grid, divided into intervals of 0.002 meters, is the 5th point. If energy conservation is applied at this point, Equation given below is obtained.<br />
 
-$${\left( {h\left( {{T_\infty } - T{}_L} \right) + k{{\partial T} \over {\partial x}} + {{q\Delta x} \over 2} = \rho {{\Delta x} \over 2}{c_p}{{\partial T} \over {\partial t}}} \right)_{x = L}}$$<br />
+$${h\left( {{T_\infty } - T{}_L} \right) + k{{\partial T} \over {\partial x}} + {{q\Delta x} \over 2} = \rho {{\Delta x} \over 2}{c_p}{{\partial T} \over {\partial t}}}$$ <br />
 
+When the necessary adjustments are made, the following equation is obtained for the outermost node:<br />
+$$T_5^{j + 1} = 2Fo\left[ {T_4^p + Bi{T_\infty } + {{q\Delta {x^2}} \over {2k}}} \right] + \left( {1 - 2Fo - 2BiFo} \right)T_5^j$$<br />
 
