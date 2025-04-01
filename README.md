@@ -49,4 +49,6 @@ $$Fo\left( {1 + Bi} \right) \le {1 \over 2}$$ <br />
 
 By considering the symmetry around x=0, the symmetry boundary condition is applied, and for the region with the symmetry boundary condition, $${T_{m + 1}} = {T_{m - 1}}$$ is used. Therefore, the general equation for the 0th node is written, and the following equality is obtained:<br />
 
+$$T_0^{j + 1} = Fo\left[ {2T_1^p + {{q\Delta {x^2}} \over k}} \right] + \left( {1 - 2Fo} \right)T_0^j$$<br />
+
 
