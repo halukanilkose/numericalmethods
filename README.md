@@ -33,4 +33,10 @@ A numerical time-dependent solution will be obtained using the FTCS (Forward Tim
 
 $$k{{{\partial ^2}T} \over {\partial {x^2}}} + q = \rho {c_p}{{\partial T} \over {\partial t}}$$ <br />
 
+When the equation is discretized, it will take the following form:<br />
+
+$$k{{T_{i + 1}^j - 2T_i^j + T_{i - 1}^j} \over {\Delta {x^2}}} + q = \rho {c_p}{{T_i^{j + 1} - T_i^j} \over {\Delta t}}$$<br />
+
+
+
 
