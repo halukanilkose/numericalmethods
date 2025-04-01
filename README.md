@@ -18,6 +18,6 @@ As seen in Equation,there are constants C<sub>1</sub>	 and C<sub>2</sub>. To det
 $${{dT} \over {dx}} = 0$$ <br />
 The boundary condition at x=L is given in the following equation.<br />
 
-$$ - k{{dT} \over {dx}}$$ =$$h\left( {{T_s} - {T_\infty }} \right)$$<br />
+$$ - k{{dT} \over {dx}} = h\left( {{T_s} - {T_\infty }} \right)$$ <br />
 
 By applying the symmetric boundary condition, the constant 𝐶<sub>1</sub> is found to be 0. Furthermore, by applying the boundary condition at 𝑥=𝐿, $${C_2} = {T_\infty } + {{qL} \over h} - {{q{L^2}} \over {2k}}$$ has been determined.
