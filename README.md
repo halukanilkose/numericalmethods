@@ -41,7 +41,7 @@ When the necessary adjustments are made, the following time-dependent 1-dimensio
 
 $$T_i^{j + 1} = Fo\left[ {T_{i - 1}^j - T_{i + 1}^j + {{q\Delta {x^2}} \over k}} \right] + \left( {1 - 2Fo} \right)T_i^j$$ <br />
 
-where <br />, 
+where, <br /> 
 
 $$Fo = {{k\Delta t} \over {\rho {c_p}\Delta {x^2}}}$$  <br />
 
