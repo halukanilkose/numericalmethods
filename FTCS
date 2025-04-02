@@ -13,19 +13,8 @@ while i<len(directionVector):
     temperatureDisturbion.append(16.67 * (1 - (directionVector[i]**2/length**2)) + 340.91)
     i+=1
 
-temperatureDisturbion         = pandas.Series(temperatureDisturbion)
-
-plt.grid(color='gray', linestyle='--', linewidth=0.5)
-plt.plot(directionVector, temperatureDisturbion, linestyle='-', color='red', label='y = x^2')
-plt.xlabel('Location [m]',fontweight="bold")
-plt.ylabel('Temperature [°C]',fontweight="bold")
-plt.xlim([0.000,0.010])
-plt.ylim([330,360])
-plt.savefig("steadyStateSolution.png", dpi=1500)
-plt.close()
-
-    
-steadyStateResult = pandas.concat([directionVector,temperatureDisturbion.round(2)],axis=1).T
+temperatureDisturbion         = pandas.Series(temperatureDisturbion)    
+steadyStateResult             = pandas.concat([directionVector,temperatureDisturbion.round(2)],axis=1).T
 steadyStateResult.to_excel("steadyStateResult.xlsx",index=False,header=None)
 
 
@@ -34,7 +23,7 @@ thermalDiffusitivity          = 5 * 10**(-6)
 thermalCapacity               = thermalConductivity / thermalDiffusitivity
 
 heatGeneration                = 2 * 10 **(7)
-solutionDuration              = 400
+solutionDuration              = 1.5
 heatTransferCoefficient       = 1100
 freeStreamTemperature         = 250
 
@@ -72,15 +61,3 @@ temperatureMatrix = pandas.DataFrame(temperatureMatrix)
 temperatureMatrix = temperatureMatrix.round(2)
 temperatureMatrix = pandas.concat([pandas.Series(directionVector),temperatureMatrix],axis=1)
 temperatureMatrix.to_excel("results.xlsx",header=[""]+timeMatrix.tolist(), index=False)
-
-
-plt.grid(color='gray', linestyle='--', linewidth=0.5)
-plt.plot(timeMatrix, temperatureMatrix.T[0][1:], linestyle='-', color='black')
-plt.plot(timeMatrix, temperatureMatrix.T[5][1:], linestyle='-', color='red')
-plt.xlabel('Time [s]',fontweight="bold")
-plt.ylabel('Temperature [°C]',fontweight="bold")
-plt.legend(["x=0.00 m","x=0.01 m"])
-plt.xlim([0,400])
-plt.ylim([320,480])
-plt.savefig("transientSolution.png", dpi=1500)
-plt.close()
