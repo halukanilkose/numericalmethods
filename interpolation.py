@@ -2,7 +2,8 @@ import numpy
 import matplotlib.pyplot as plt
 import pandas
 
-data                       = numpy.loadtxt("data.txt")
+dataName                   = input("Please enter the name of the document:")
+data                       = numpy.loadtxt("{}.txt".format(dataName))
 firstVariable              = data [:,0]
 secondVariable             = data [:,1]
 
