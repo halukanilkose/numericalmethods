@@ -1,2 +1,1 @@
-Bir txt dosyası içerisinde numpy aracığıyla kolonları okuyup, bu kolonlar arasındaki zaman aralığını kendi belirttiğimiz aralığına göre interpolasyon etmeye yardımcı olmaktadır. 
-Ayrıca, bu python scripti aracığıyla belirli aralıklara böldüğümüz datayı hem görselleştirme hem de excel dosyasına kaydetmemize yardımcı olacaktır.
+This Python script helps read columns from a text file using NumPy and interpolates the time intervals between these columns based on a user-defined interval. Additionally, the script allows visualizing the segmented data and saving it to an Excel file.
