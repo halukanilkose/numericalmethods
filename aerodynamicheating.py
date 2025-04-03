@@ -170,4 +170,4 @@ referenceHTCData             = pandas.Series(referenceHTCData)
 
 data                         = pandas.concat([time,skinTemperatureData,innerWallData,heatFluxData,referenceHTCData],axis=1)
 header                       = ["Time[s]","Outer Wall Temperature[°C]","Inner Wall Temperature[°C]","Heat Flux[W/m\u00b2]","HTC[W/m\u00b2K]"]
-data.to_csv("data.csv",index=None, sep="," , header= header)
+data.to_csv("data.txt",index=None, sep="," , header= header)
