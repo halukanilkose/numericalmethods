@@ -243,18 +243,25 @@ class Ui_Form(object):
         self.xAxis                         = self.xLineEdit.text()
         self.yAxis                         = self.yLabel.text()
         
-        data                               = pandas.read_csv("data.txt",sep="\t")
+        data                               = pandas.read_excel("data.xlsx")
         xDataInterval                      = numpy.linspace(self.xMinimum, self.xMaximum, int(self.xInterval))
         yDataInterval                      = numpy.linspace(self.yMinimum, self.yMaximum, int(self.yInterval))
         
         headerList                         = data.columns.tolist()
         headerListSecond                   = headerList[1:]
         
+        
+    
+        ax = data.plot(headerList[0],headerListSecond)
         plt.grid(True, color='gray', linestyle='--', linewidth=0.5)
-        data.plot(headerList[0],headerListSecond)
         plt.xticks(xDataInterval)
         plt.yticks(yDataInterval)
+        plt.xlim(self.xMinimum, self.xMaximum)    
+        plt.ylim(self.yMinimum, self.yMaximum)   
+        plt.xlabel(self.xAxis,fontweight="bold")
+        plt.ylabel(self.yAxis,fontweight="bold")
         plt.show()
+        
         
 
         
