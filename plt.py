@@ -9,8 +9,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(650, 550)
-        Form.setMinimumSize(QtCore.QSize(650, 550))
-        Form.setMaximumSize(QtCore.QSize(650, 550))
+        Form.setMinimumSize(QtCore.QSize(650, 620))
+        Form.setMaximumSize(QtCore.QSize(650, 620))
         Form.setStyleSheet("background-color: rgb(0, 0, 255);")
         self.xMinPushButton = QtWidgets.QPushButton(Form)
         self.xMinPushButton.setGeometry(QtCore.QRect(60, 130, 131, 31))
@@ -56,7 +56,7 @@ class Ui_Form(object):
 "border-radius:10;")
         self.browserPushButton.setObjectName("browserPushButton")
         self.xLineInterval = QtWidgets.QLineEdit(Form)
-        self.xLineInterval.setGeometry(QtCore.QRect(340, 380, 251, 31))
+        self.xLineInterval.setGeometry(QtCore.QRect(340, 450, 251, 31))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(9)
@@ -77,7 +77,7 @@ class Ui_Form(object):
 "")
         self.browserLineEdit.setObjectName("browserLineEdit")
         self.plotPushButton = QtWidgets.QPushButton(Form)
-        self.plotPushButton.setGeometry(QtCore.QRect(230, 440, 191, 31))
+        self.plotPushButton.setGeometry(QtCore.QRect(220, 520, 191, 31))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(9)
@@ -87,6 +87,19 @@ class Ui_Form(object):
 "border-radius:10;\n"
 "border: 1px solid black;")
         self.plotPushButton.setObjectName("plotPushButton")
+        
+        self.legendColumnNumberPushButton = QtWidgets.QPushButton(Form)
+        self.legendColumnNumberPushButton.setGeometry(QtCore.QRect(60, 330, 131, 31))
+        font = QtGui.QFont()
+        font.setFamily("Courier New")
+        font.setPointSize(9)
+        self.legendColumnNumberPushButton.setFont(font)
+        self.legendColumnNumberPushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.legendColumnNumberPushButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-radius:10;\n"
+"border: 1px solid black;")
+        self.legendColumnNumberPushButton.setObjectName("legendColumnNumberPushButton")
+    
         self.xMaxPushButton = QtWidgets.QPushButton(Form)
         self.xMaxPushButton.setGeometry(QtCore.QRect(60, 180, 131, 31))
         font = QtGui.QFont()
@@ -128,7 +141,7 @@ class Ui_Form(object):
 "border: 1px solid black;")
         self.xLabelPushButton.setObjectName("xLabelPushButton")
         self.dosyaAdi = QtWidgets.QPushButton(Form)
-        self.dosyaAdi.setGeometry(QtCore.QRect(120, 380, 161, 31))
+        self.dosyaAdi.setGeometry(QtCore.QRect(120, 450, 161, 31))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(9)
@@ -138,7 +151,7 @@ class Ui_Form(object):
 "border: 1px solid black;")
         self.dosyaAdi.setObjectName("dosyaAdi")
         self.title = QtWidgets.QLineEdit(Form)
-        self.title.setGeometry(QtCore.QRect(440, 500, 171, 31))
+        self.title.setGeometry(QtCore.QRect(420, 560, 171, 31))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(9)
@@ -227,6 +240,18 @@ class Ui_Form(object):
 "border-radius:10;\n"
 "border: 1px solid black;")
         self.yLabelPushButton.setObjectName("yLabelPushButton")
+        
+        self.legendSize = QtWidgets.QPushButton(Form)
+        self.legendSize.setGeometry(QtCore.QRect(340, 330, 131, 31))
+        font = QtGui.QFont()
+        font.setFamily("Courier New")
+        font.setPointSize(9)
+        self.legendSize.setFont(font)
+        self.legendSize.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-radius:10;\n"
+"border: 1px solid black;")
+        self.legendSize.setObjectName("legendSize")
+        
         self.yLabelLineEdit = QtWidgets.QLineEdit(Form)
         self.yLabelLineEdit.setGeometry(QtCore.QRect(480, 280, 111, 31))
         font = QtGui.QFont()
@@ -237,8 +262,18 @@ class Ui_Form(object):
 "border-radius:10;\n"
 "border: 1px solid black;")
         self.yLabelLineEdit.setObjectName("yLabelLineEdit")
+        self.legendColumnNumberText = QtWidgets.QLineEdit(Form)
+        self.legendColumnNumberText.setGeometry(QtCore.QRect(200, 330, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("Courier New")
+        font.setPointSize(9)
+        self.legendColumnNumberText.setFont(font)
+        self.legendColumnNumberText.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-radius:10;\n"
+"border: 1px solid black;")
+        self.legendColumnNumberText.setObjectName("legendColumnNumberText")  
         self.legendLocationButton = QtWidgets.QPushButton(Form)
-        self.legendLocationButton.setGeometry(QtCore.QRect(120, 330, 161, 31))
+        self.legendLocationButton.setGeometry(QtCore.QRect(120, 400, 161, 31))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(9)
@@ -248,7 +283,7 @@ class Ui_Form(object):
 "border: 1px solid black;")
         self.legendLocationButton.setObjectName("legendLocationButton")
         self.comboBox = QtWidgets.QComboBox(Form)
-        self.comboBox.setGeometry(QtCore.QRect(340, 330, 251, 31))
+        self.comboBox.setGeometry(QtCore.QRect(340, 400, 251, 31))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(9)
@@ -269,6 +304,32 @@ class Ui_Form(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        
+        
+        self.comboBox2 = QtWidgets.QComboBox(Form)
+        self.comboBox2.setGeometry(QtCore.QRect(480, 330, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("Courier New")
+        font.setPointSize(9)
+        self.comboBox2.setFont(font)
+        self.comboBox2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-radius:10;\n"
+"border: 1px solid black;")
+        self.comboBox2.setObjectName("comboBox2")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("")
+        self.comboBox2.addItem("") 
+        self.comboBox2.addItem("") 
+        
+        
         self.calculateButton = QtWidgets.QPushButton(Form)
         self.calculateButton.setGeometry(QtCore.QRect(260, 80, 131, 31))
         font = QtGui.QFont()
@@ -291,7 +352,8 @@ class Ui_Form(object):
         Form.setTabOrder(self.XintervalLineEdit, self.YintervalLineEdit)
         Form.setTabOrder(self.YintervalLineEdit, self.xLabelLineEdit)
         Form.setTabOrder(self.xLabelLineEdit, self.yLabelLineEdit)
-        Form.setTabOrder(self.yLabelLineEdit, self.comboBox)
+        Form.setTabOrder(self.yLabelLineEdit, self.legendColumnNumberText)
+        Form.setTabOrder(self.legendColumnNumberText, self.comboBox)
         Form.setTabOrder(self.comboBox, self.xLineInterval)
         Form.setTabOrder(self.xLineInterval, self.xMinPushButton)
         Form.setTabOrder(self.xMinPushButton, self.xMaxPushButton)
@@ -312,11 +374,12 @@ class Ui_Form(object):
         self.calculateButton.clicked.connect(self.calculation)
         self.plotPushButton.clicked.connect(self.plot)
         self.comboBox.activated.connect(self.legendLocation)
-
+        self.comboBox2.activated.connect(self.legenSizeData)
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "MEOS Isıl Tasarım Ekibi Plotv02"))
         self.xMinPushButton.setText(_translate("Form", "Xmin"))
+        self.legendColumnNumberPushButton.setText(_translate("Form", "Legend No"))
         self.browserPushButton.setText(_translate("Form", "Browse..."))
         self.plotPushButton.setText(_translate("Form", "Plot+Save"))
         self.xMaxPushButton.setText(_translate("Form", "Xmax"))
@@ -327,6 +390,7 @@ class Ui_Form(object):
         self.title.setText(_translate("Form", "   MEOS ISIL TASARIM EKİBİ"))
         self.yMaxPushButton.setText(_translate("Form", "Ymax"))
         self.yminPushButton.setText(_translate("Form", "Ymin"))
+        self.legendSize.setText(_translate("Form", "Legend Size"))
         self.yLabelPushButton.setText(_translate("Form", "Y"))
         self.legendLocationButton.setText(_translate("Form", "Legend Location"))
         self.comboBox.setItemText(0, _translate("Form", " "))
@@ -341,7 +405,25 @@ class Ui_Form(object):
         self.comboBox.setItemText(9, _translate("Form", "lower center"))
         self.comboBox.setItemText(10, _translate("Form", "upper center"))
         self.comboBox.setItemText(11, _translate("Form", "center"))
+        self.comboBox.setItemText(12, _translate("Form", "outside right"))
+        self.comboBox.setItemText(13, _translate("Form", "outside lower"))
+        
+        self.comboBox2.setItemText(1, _translate("Form", "6"))
+        self.comboBox2.setItemText(2, _translate("Form", "7"))
+        self.comboBox2.setItemText(3, _translate("Form", "8"))
+        self.comboBox2.setItemText(4, _translate("Form", "9"))
+        self.comboBox2.setItemText(5, _translate("Form", "10"))
+        self.comboBox2.setItemText(6, _translate("Form", "11"))
+        self.comboBox2.setItemText(7, _translate("Form", "12"))
+        self.comboBox2.setItemText(8, _translate("Form", "13"))
+        self.comboBox2.setItemText(9, _translate("Form", "14"))
+        
+        
+        
+        
         self.calculateButton.setText(_translate("Form", "Calculate"))
+        
+        
 
     def browseFolder(self):
         self.text, self.placeholder        = QFileDialog.getOpenFileName(None, 'Select file')
@@ -386,6 +468,9 @@ class Ui_Form(object):
     def legendLocation(self,index):
         self.selectedLegendComboBox           = self.comboBox.itemText(index)
         
+    def legenSizeData(self,index):
+        self.legendSizeDataFontSize           = self.comboBox2.itemText(index)
+        self.legendSizeDataFontSize           = int(self.legendSizeDataFontSize)
         
         
     def plot(self):
@@ -397,6 +482,10 @@ class Ui_Form(object):
             self.yMaximum                      = float((self.YmaxLineEdit.text()))
             self.xInterval                     = float((self.XintervalLineEdit.text()))
             self.yInterval                     = float((self.YintervalLineEdit.text()))
+            self.legendColumnNumber            = int(self.legendColumnNumberText.text())
+        
+            
+           
             self.xAxis                         = self.xLabelLineEdit.text()
             self.yAxis                         = self.yLabelLineEdit.text()
             self.documentName                  = self.xLineInterval.text()
@@ -408,8 +497,6 @@ class Ui_Form(object):
             headerList                         = data.columns.tolist()
             headerListSecond                   = headerList[1:]
             
-            
-        
             ax = data.plot(headerList[0],headerListSecond)
             plt.grid(True, color='gray', linestyle='--', linewidth=0.5)
             plt.xticks(xDataInterval)
@@ -418,9 +505,28 @@ class Ui_Form(object):
             plt.ylim(self.yMinimum, self.yMaximum)   
             plt.xlabel(self.xAxis,fontweight="bold")
             plt.ylabel(self.yAxis,fontweight="bold")
-            plt.legend(loc='{}'.format(self.selectedLegendComboBox))
-            plt.savefig("{}.png".format(self.documentName),dpi=1000)
-            plt.show()
+        
+
+            
+            if self.selectedLegendComboBox != "outside right" and self.selectedLegendComboBox != "outside lower" :
+                plt.legend(loc='{}'.format(self.selectedLegendComboBox),ncol=self.legendColumnNumber,fontsize=self.legendSizeDataFontSize)
+                plt.savefig("{}.png".format(self.documentName),dpi=1000)
+                plt.show()
+            else:
+                if self.selectedLegendComboBox == "outside lower" :
+                    plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=self.legendColumnNumber,fontsize=self.legendSizeDataFontSize)
+                    plt.tight_layout()
+                    plt.savefig('{}.png'.format(self.documentName),dpi=1000, bbox_inches='tight')
+                    plt.show()
+                else:
+                    plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), ncol=self.legendColumnNumber,fontsize=self.legendSizeDataFontSize)
+                    plt.tight_layout()
+                    plt.savefig('{}.png'.format(self.documentName),dpi=1000, bbox_inches='tight')
+                    plt.show()
+                    
+
+                    
+                
         
             msg_box = QMessageBox()
             msg_box.setIcon(QMessageBox.Information)
