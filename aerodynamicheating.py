@@ -1,10 +1,16 @@
 import numpy
 import pandas
 import math
+import json
 
 
 trajectoryDataName            = input("Please enter the name of the document: ") 
 trajectoryData                = pandas.read_excel("{}.xlsx".format(trajectoryDataName))
+
+with open("variables.txt", "r") as dosya:
+    variable                  = json.load(dosya)
+
+
 headerList                    = list(trajectoryData.columns.values)
 timeDomain                    = trajectoryData[headerList[0]]
 mach                          = trajectoryData[headerList[1]]
@@ -15,6 +21,7 @@ freeStreamPressure            = []
 freeStreamDensity             = []
 freeStreamDynamicViscosity    = []
 freeStreamThermalConductivity = []
+
 
 i=0
 while i<len(altitude):
@@ -39,29 +46,29 @@ freeStreamPressure          = (pandas.Series(freeStreamPressure) * 1000).tolist(
 freeStreamTemperature       = (pandas.Series(freeStreamTemperature) + 273.15).tolist()
 
 
-location                    =  675.6 * 10 **(-3)
-flightDuration              =  38
-timeStep                    =  0.0005
+location                    =  variable["location"]
+flightDuration              =  variable["flightDuration"]
+timeStep                    =  variable["timeStep"]
 timeMatrix                  =  numpy.arange(0,flightDuration+timeStep,timeStep) 
 
 
-thermalConductivity          =  12
-density                      =  8280
-specificHeat                 =  431
+thermalConductivity          =  variable["materialProperties"]["thermalConductivity"]
+density                      =  variable["materialProperties"]["density"]
+specificHeat                 =  variable["materialProperties"]["specificHeat"]
 thermalDiffusivity           =  thermalConductivity / (density * specificHeat)
 
-thickness                    =  0.8128 *10**(-3)
-directionStep                =  0.8128 *10**(-4)
+thickness                    =  variable["thickness"]
+directionStep                =  variable["directionStep"]
 directionMatrix              =  numpy.arange(0,thickness+directionStep,directionStep)
 FourierNumber                =  thermalDiffusivity * timeStep / directionStep ** 2
 
 gasConstant                  = 287.05
 specificHeatRatio            = 1.4
 stefanBolztmanConstant       = 5.67 * 10 **(-8)
-emissivity                   = 0.7
+emissivity                   = variable["materialProperties"]["emissivity"]
 
 temperatureMatrix            =  numpy.zeros((numpy.size(directionMatrix),numpy.size(timeMatrix)))
-initialCondition             =  273.15 + 50
+initialCondition             =  273.15 + variable["initialCondition"]
 temperatureMatrix[:,0]       =  initialCondition
 heatTransferCoefficient      =  []
 heatFlux                     =  []
@@ -171,3 +178,7 @@ referenceHTCData             = pandas.Series(referenceHTCData)
 data                         = pandas.concat([time,skinTemperatureData,innerWallData,heatFluxData,referenceHTCData],axis=1)
 header                       = ["Time[s]","Outer Wall Temperature[°C]","Inner Wall Temperature[°C]","Heat Flux[W/m\u00b2]","HTC[W/m\u00b2K]"]
 data.to_csv("data.txt",index=None, sep="," , header= header)
+
+    
+
+
