@@ -1,0 +1,14 @@
+{
+	"location"	     		    :  0.3556,
+	"flightDuration"     		:  25,
+	"timeStep"	     		    :  0.0005,
+	"materialProperties"    : {
+		"thermalConductivity"	: 12,
+		"density"		          : 8280,
+		"specificHeat"		    : 431,
+		"emissivity"		      : 0.7
+	},
+	"thickness"			        : 0.000762,
+	"directionStep"			    : 0.0000762,
+	"initialCondition"		  : 9
+}
