@@ -1,0 +1,4 @@
+location	flightDuration	timeStep	thermalConductivity	density	specificHeat	emissivity	thickness	directionStep	initialCondition
+0.3556	25	0.0005	12	8280	431	0.7	0.000762	0.0000762	9
+0.3556	25	0.0005	12	8280	431	0.7	0.000762	0.0000762	20
+0.3556	25	0.0005	12	8280	431	0.7	0.000762	0.0000762	30
