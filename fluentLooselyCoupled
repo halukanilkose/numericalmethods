@@ -1,0 +1,34 @@
+import subprocess
+import os
+import numpy
+import time
+
+
+flightDuration = numpy.arange(0,1.5,0.5)
+
+j=0 
+while j<len(flightDuration)-1:
+    runDirectory        = r"C:\Users\Haluk\Desktop\rocket"
+    with open(r"{}\journalfluid.jou".format(runDirectory),"w") as journal:
+        journal.write("rcd rocket_{}.cas.h5\n".format(j))
+        journal.write("solve iterate 1\n")
+        journal.write("wcd rocket_{}.cas.h5\n".format(j+1))
+        journal.write("exit yes")
+    
+    fluentMainPath      = r"C:\Program Files\ANSYS Inc\v231\fluent\ntbin\win64\fluent.exe"
+    process             = subprocess.run([fluentMainPath, "3ddp", "-t4","-i", "journalfluid.jou"],cwd=runDirectory)
+    
+    while True:
+        os.chdir(runDirectory)
+        directoryDocuments      = os.listdir()
+        isAvailable             = False
+        i = 0
+        while i < len(directoryDocuments):
+            if directoryDocuments[i] == "rocket_{}.cas.h5".format(j+1):
+                isAvailable = True
+                break        
+            i += 1
+        if isAvailable:
+            break       
+    time.sleep(300) 
+    j+=1
