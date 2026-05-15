@@ -1,0 +1,61 @@
+import pandas
+
+fluidDomainFileExport       = "Hisar_0.0M_0.0metre_0aoa_0.0s_wall_flux_const_temp.txt"
+wallHeatFlux                = pandas.read_csv("{}".format(fluidDomainFileExport))
+wallHeatFluxHeader          = wallHeatFlux.columns.values.tolist()
+wallHeatFluxValues          = wallHeatFlux.sort_values(by="{}".format(wallHeatFluxHeader[1])).reset_index() 
+
+xDataWallHeatFlux           = wallHeatFluxValues[wallHeatFluxHeader[1]]
+yDataWallHeatFlux           = wallHeatFluxValues[wallHeatFluxHeader[2]]
+zDataWallHeatFlux           = wallHeatFluxValues[wallHeatFluxHeader[3]]
+WallHeatFlux                = wallHeatFluxValues[wallHeatFluxHeader[4]]
+
+i = 1
+profilName             = "profil{}.prof".format(i)
+with open("{}".format(profilName),"w") as document:
+    document.writelines("((profil point {})\n".format(len(xDataWallHeatFlux)))
+    document.writelines("\n")
+    document.writelines("(x\n")
+    j=0
+    while j<len(wallHeatFluxValues):
+        document.writelines('{:12.15f}'.format(xDataWallHeatFlux[j]))
+        if j <len(wallHeatFluxValues)-1:
+           document.writelines("\n")
+        j+=1
+    document.writelines("\n)")
+    document.writelines("\n")
+    document.writelines("(y\n")
+    j=0
+    while j<len(wallHeatFluxValues):
+        document.writelines('{:12.15f}'.format(yDataWallHeatFlux[j]))
+        if j <len(wallHeatFluxValues)-1:
+           document.writelines("\n")
+        j+=1
+    document.writelines("\n)")
+    document.writelines("\n")
+    document.writelines("(z\n")
+    j=0
+    while j<len(wallHeatFluxValues):
+        document.writelines('{:12.15f}'.format(zDataWallHeatFlux[j]))
+        if j <len(wallHeatFluxValues)-1:
+           document.writelines("\n")
+        j+=1
+    document.writelines("\n)")
+    document.writelines("\n")
+    document.writelines("(heat_flux\n")
+    j=0
+    while j<len(wallHeatFluxValues):
+        document.writelines('{:12.15f}'.format(WallHeatFlux[j]))
+        if j <len(wallHeatFluxValues)-1:
+           document.writelines("\n")
+        j+=1
+    document.writelines("\n)")
+    document.writelines("\n")
+    
+    
+          
+          
+          
+
+
+    
